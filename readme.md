@@ -36,7 +36,7 @@ Create generic folders of nginx
 Create the generic files for the Jitsi's domain
 
 `sudo touch /etc/nginx/sites-available/<jitsi_domain>.conf`  
-`sudo touch /etc/nginx/sites-enabled/<jitsi_domain>.conf`
+`sudo ln -s /etc/nginx/sites-available/<jitsi_domain>.conf /etc/nginx/sites-enabled/<jitsi_domain>.conf`
 
 Enter to web templates folder
 
