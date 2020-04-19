@@ -38,17 +38,21 @@ Create the generic files for the Jitsi's domain
 `sudo touch /etc/nginx/sites-available/<jitsi_domain>.conf`  
 `sudo touch /etc/nginx/sites-enabled/<jitsi_domain>.conf`
 
+### Download the Jitsi templates and extract the file
+
 Enter to web templates folder
 
 `cd /usr/local/vesta/data/templates/web/`
 
-Download the Jitsi templates
+Apache + Nginx Version 
 
-`sudo wget https://github.com/josemyg/vestacp-jitsitemplate/raw/master/jitsi_vesta_template.tar.gz`
-
-Extract the file
-
+`sudo wget https://github.com/josemyg/vestacp-jitsitemplate/raw/master/jitsi_vesta_template.tar.gz`  
 `sudo tar -xzvf jitsi_vesta_template.tar.gz`
+
+Nginx Only Version
+
+`sudo wget https://github.com/josemyg/vestacp-jitsitemplate/raw/master/jitsi_vesta_template_nginx.tar.gz`  
+`sudo tar -xzvf jitsi_vesta_template_nginx.tar.gz`
 
 Delete the comprimied file
 
@@ -77,7 +81,9 @@ Certificate
 
 `/home/<username>/conf/web/ssl.<jitsi_domain>.crt`
 
-NAT configuration (Only if neccesary)
+Change the template on Jitsi's domain to Jitsi in VestaCP
+
+### NAT configuration (Only if neccesary)
 
 `sudo nano /etc/jitsi/videobridge/sip-communicator.properties`
 
@@ -85,7 +91,5 @@ Add the lines
 
 `org.ice4j.ice.harvest.NAT_HARVESTER_LOCAL_ADDRESS=<Local.IP.Address>`  
 `org.ice4j.ice.harvest.NAT_HARVESTER_PUBLIC_ADDRESS=<Public.IP.Address>`
-
-Change the template on Jitsi's domain to Jitsi in VestaCP
 
 It's done!
