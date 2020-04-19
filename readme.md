@@ -38,6 +38,8 @@ Create the generic files for the Jitsi's domain
 `sudo touch /etc/nginx/sites-available/<jitsi_domain>.conf`  
 `sudo touch /etc/nginx/sites-enabled/<jitsi_domain>.conf`
 
+Open 10000 UCP port on Firewall
+
 ### Download the Jitsi templates and extract the file
 
 Enter to web templates folder
@@ -55,8 +57,6 @@ Nginx Only Version
 `sudo wget https://github.com/josemyg/vestacp-jitsitemplate/raw/master/jitsi_vesta_template_nginx.tar.gz`  
 `sudo tar -xzvf jitsi_vesta_template_nginx.tar.gz`  
 `sudo rm jitsi_vesta_template_nginx.tar.gz`
-
-Open 10000 UCP port on Firewall
 
 ## Jitsi's Instalation
 
