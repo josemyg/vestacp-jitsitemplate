@@ -54,7 +54,7 @@ Delete the comprimied file
 
 `sudo rm jitsi_vesta_template.tar.gz`
 
-Open 10000 UCP port on Firewall
+Open 10000 UDP port on Firewall
 
 ## Jitsi's Instalation
 
