@@ -81,7 +81,7 @@ Certificate
 
 Change the template on Jitsi's domain to Jitsi in VestaCP (apache2 and nginx)
 
-### NAT configuration (Only if neccesary)
+### NAT configuration (Only if necessary)
 
 `sudo nano /etc/jitsi/videobridge/sip-communicator.properties`
 
