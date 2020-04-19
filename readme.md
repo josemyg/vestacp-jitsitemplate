@@ -1,5 +1,7 @@
 # Jitsi Template for VestaCP
 
+VestaCP templates files to install Jitsi Meet on Ubuntu Server
+
 ## Requeriments
 
 * *Ubuntu Server 18.04* (should works on *Debian 9/10* but is not tested)
