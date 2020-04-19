@@ -24,9 +24,13 @@ Install apt-transport-https
 
 `sudo apt-get install apt-transport-https`
 
-Activate proxy_http on apache
+Activate proxy_http module on apache (if not already set)
 
 `a2enmod proxy_http`
+
+Activate headers module on apache (if not already set)
+
+`a2enmod headers`
 
 Create generic folders of nginx
 
