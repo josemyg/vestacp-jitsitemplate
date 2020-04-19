@@ -90,6 +90,6 @@ Add the lines
 `org.ice4j.ice.harvest.NAT_HARVESTER_LOCAL_ADDRESS=<Local.IP.Address>`  
 `org.ice4j.ice.harvest.NAT_HARVESTER_PUBLIC_ADDRESS=<Public.IP.Address>`
 
-Change the template on Jitsi's domain to Jitsi in VestaCP
+Change the template on Jitsi's domain to Jitsi in VestaCP (apache2 and nginx)
 
 It's done!
