@@ -47,16 +47,14 @@ Enter to web templates folder
 Apache + Nginx Version 
 
 `sudo wget https://github.com/josemyg/vestacp-jitsitemplate/raw/master/jitsi_vesta_template.tar.gz`  
-`sudo tar -xzvf jitsi_vesta_template.tar.gz`
+`sudo tar -xzvf jitsi_vesta_template.tar.gz`  
+`sudo rm jitsi_vesta_template.tar.gz`
 
 Nginx Only Version
 
 `sudo wget https://github.com/josemyg/vestacp-jitsitemplate/raw/master/jitsi_vesta_template_nginx.tar.gz`  
-`sudo tar -xzvf jitsi_vesta_template_nginx.tar.gz`
-
-Delete the comprimied file
-
-`sudo rm jitsi_vesta_template.tar.gz`
+`sudo tar -xzvf jitsi_vesta_template_nginx.tar.gz`  
+`sudo rm jitsi_vesta_template_nginx.tar.gz`
 
 Open 10000 UCP port on Firewall
 
