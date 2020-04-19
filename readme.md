@@ -24,9 +24,9 @@ Install apt-transport-https
 
 `sudo apt-get install apt-transport-https`
 
-Activate proxy_http on apache
+Activate headers module on apache (if not already set)
 
-`a2enmod proxy_http`
+`a2enmod headers`
 
 Create generic folders of nginx
 
@@ -36,9 +36,9 @@ Create generic folders of nginx
 Create the generic files for the Jitsi's domain
 
 `sudo touch /etc/nginx/sites-available/<jitsi_domain>.conf`  
-`sudo touch /etc/nginx/sites-enabled/<jitsi_domain>.conf`
+`sudo ln -s /etc/nginx/sites-available/<jitsi_domain>.conf /etc/nginx/sites-enabled/<jitsi_domain>.conf`
 
-Open 10000 UCP port on Firewall
+Open 10000 UDP port on Firewall
 
 ### Download the Jitsi templates and extract the file
 
@@ -58,18 +58,18 @@ Nginx Only Version
 `sudo tar -xzvf jitsi_vesta_template_nginx.tar.gz`  
 `sudo rm jitsi_vesta_template_nginx.tar.gz`
 
-## Jitsi's Instalation
+## Jitsi's Installation
 
 Set the Oficial Repository of Jitsi ([Source](https://github.com/jitsi/jitsi-meet/blob/master/doc/quick-install.md))
 
-`echo 'deb https://download.jitsi.org stable/' >> /etc/apt/sources.list.d/jitsi-stable.list`  
+`echo 'deb https://download.jitsi.org stable/' >> /etc/apt/sources.list.d/jitsi-stable.list`
 `wget -qO -  https://download.jitsi.org/jitsi-key.gpg.key | sudo apt-key add -`
 
 Run the Jitsi's installation
 
 `sudo apt-get -y update && sudo apt-get -y install jitsi-meet`
 
-On the instalation, select *"Own certificate"* option and insert the path of certificates
+During the installation, select *"Own certificate"* option and insert the path of certificates
 
 Key
 
@@ -79,7 +79,7 @@ Certificate
 
 `/home/<username>/conf/web/ssl.<jitsi_domain>.crt`
 
-Change the template on Jitsi's domain to Jitsi in VestaCP
+Change the template on Jitsi's domain to Jitsi in VestaCP (apache2 and nginx)
 
 ### NAT configuration (Only if neccesary)
 
