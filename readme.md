@@ -54,7 +54,7 @@ Extract the file
 
 `sudo tar -xzvf jitsi_vesta_template.tar.gz`
 
-Delete the unecessary archive file
+Delete the unnecessary archive file
 
 `sudo rm jitsi_vesta_template.tar.gz`
 
