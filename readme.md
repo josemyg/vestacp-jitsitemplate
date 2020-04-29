@@ -26,7 +26,7 @@ Install apt-transport-https
 
 Activate headers module on apache (if not already set)
 
-`a2enmod headers`
+`sudo a2enmod headers proxy_http`
 
 Create generic folders of nginx
 
@@ -62,12 +62,14 @@ Nginx Only Version
 
 Set the Oficial Repository of Jitsi ([Source](https://github.com/jitsi/jitsi-meet/blob/master/doc/quick-install.md))
 
-`echo 'deb https://download.jitsi.org stable/' >> /etc/apt/sources.list.d/jitsi-stable.list`
-`wget -qO -  https://download.jitsi.org/jitsi-key.gpg.key | sudo apt-key add -`
+```sh
+echo 'deb https://download.jitsi.org stable/' | sudo tee /etc/apt/sources.list.d/jitsi-stable.list
+wget -qO -  https://download.jitsi.org/jitsi-key.gpg.key | sudo apt-key add -
+```
 
 Run the Jitsi's installation
 
-`sudo apt-get -y update && sudo apt-get -y install jitsi-meet`
+`sudo apt-get update && sudo apt-get -y install jitsi-meet`
 
 During the installation, select *"Own certificate"* option and insert the path of certificates
 
