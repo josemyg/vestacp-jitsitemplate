@@ -24,7 +24,7 @@ Install apt-transport-https
 
 `sudo apt-get install apt-transport-https`
 
-Activate headers module on apache (if not already set)
+Activate headers and proxy_http modules on apache (if not already set)
 
 `sudo a2enmod headers proxy_http`
 
