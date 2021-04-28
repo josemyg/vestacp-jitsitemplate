@@ -1,4 +1,4 @@
-# Jitsi Template for Hestia Control Panel VestaCP
+# Jitsi Template for Hestia Control Panel / VestaCP
 
 Hestia Control Panel/VestaCP templates files to install Jitsi Meet on Debian/Ubuntu Server
 
