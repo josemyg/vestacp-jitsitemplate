@@ -33,7 +33,7 @@ server {
     }
 
     #ensure all static content can always be found first
-    location ~ ^/(libs|css|static|images|fonts|lang|sounds|connection_optimization|.well-known)/(.*)$
+    location ~ ^/(libs|css|static|images|fonts|lang|sounds|connection_optimization)/(.*)$
     {
         add_header 'Access-Control-Allow-Origin' '*';
         alias /usr/share/jitsi-meet/$1/$2;
@@ -98,4 +98,7 @@ server {
 
         rewrite ^/(.*)$ /xmpp-websocket;
     }
+
+    include %home%/%user%/conf/web/%domain%/nginx.ssl.conf_*;
+    
 }

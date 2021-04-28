@@ -1,16 +1,16 @@
-# Jitsi Template for VestaCP
+# Jitsi Template for Hestia Control Panel VestaCP
 
-VestaCP templates files to install Jitsi Meet on Ubuntu Server
+Hestia Control Panel/VestaCP templates files to install Jitsi Meet on Debian/Ubuntu Server
 
 ## Requeriments
 
-* *Ubuntu Server 18.04* (should works on *Debian 9/10* but is not tested)
-* *VestaCP*
+* *Ubuntu Server 18.04 / Debian 10*
+* *Hestia Control Panel / VestaCP*
 * *Nginx*
 * *Apache2* (Optional)
 
 
-## Instalation of Jitsi on Ubuntu Server 18.04 with VestaCP
+## Instalation of Jitsi on Debian 10 / Ubuntu Server 18.04 with Hestia/VestaCP
 
 ### Create the domain
 
@@ -42,6 +42,26 @@ Open 10000 UDP port on Firewall
 
 ### Download the Jitsi templates and extract the file
 
+#### Hestia Control Panel
+
+Enter to web templates folder
+
+`cd /usr/local/hestia/data/templates/web/`
+
+Apache + Nginx Version 
+
+`sudo wget https://github.com/josemyg/hestiacp-jitsitemplate/raw/master/jitsi_vesta_template.tar.gz`  
+`sudo tar -xzvf jitsi_vesta_template.tar.gz`  
+`sudo rm jitsi_vesta_template.tar.gz`
+
+Nginx Only Version
+
+`sudo wget https://github.com/josemyg/hestia-jitsitemplate/raw/master/jitsi_hestia_template_nginx.tar.gz`  
+`sudo tar -xzvf jitsi_hestia_template_nginx.tar.gz`  
+`sudo rm jitsi_hestia_template_nginx.tar.gz`
+
+#### VestaCP
+
 Enter to web templates folder
 
 `cd /usr/local/vesta/data/templates/web/`
@@ -60,18 +80,30 @@ Nginx Only Version
 
 ## Jitsi's Installation
 
-Set the Oficial Repository of Jitsi ([Source](https://github.com/jitsi/jitsi-meet/blob/master/doc/quick-install.md))
+Set the Oficial Repository of Jitsi ([Source](https://jitsi.github.io/handbook/docs/devops-guide/devops-guide-quickstart#add-the-jitsi-package-repository))
 
 ```sh
-echo 'deb https://download.jitsi.org stable/' | sudo tee /etc/apt/sources.list.d/jitsi-stable.list
-wget -qO -  https://download.jitsi.org/jitsi-key.gpg.key | sudo apt-key add -
+curl https://download.jitsi.org/jitsi-key.gpg.key | sudo sh -c 'gpg --dearmor > /usr/share/keyrings/jitsi-keyring.gpg'
+echo 'deb [signed-by=/usr/share/keyrings/jitsi-keyring.gpg] https://download.jitsi.org stable/' | sudo tee /etc/apt/sources.list.d/jitsi-stable.list > /dev/null
 ```
 
-Run the Jitsi's installation
+### Run the Jitsi's installation
 
 `sudo apt-get update && sudo apt-get -y install jitsi-meet`
 
 During the installation, select *"Own certificate"* option and insert the path of certificates
+
+Hestia Control Panel
+
+Key
+
+`/home/<username>/conf/web/<jitsi_domain>/ssl/<jitsi_domain>.key`
+
+Certificate
+
+`/home/<username>/conf/web/<jitsi_domain>/ssl/<jitsi_domain>.crt`
+
+VestaCP
 
 Key
 
@@ -80,8 +112,6 @@ Key
 Certificate
 
 `/home/<username>/conf/web/ssl.<jitsi_domain>.crt`
-
-Change the template on Jitsi's domain to Jitsi in VestaCP (apache2 and nginx)
 
 ### NAT configuration (Only if necessary)
 
