@@ -51,8 +51,8 @@ Enter to web templates folder
 Apache + Nginx Version 
 
 `sudo wget https://github.com/josemyg/vestacp-jitsitemplate/raw/master/jitsi_hestia_template.tar.gz`  
-`sudo tar -xzvf jitsi_vesta_template.tar.gz`  
-`sudo rm jitsi_vesta_template.tar.gz`
+`sudo tar -xzvf jitsi_hestia_template.tar.gz`  
+`sudo rm jitsi_hestia_template.tar.gz`
 
 Nginx Only Version
 
